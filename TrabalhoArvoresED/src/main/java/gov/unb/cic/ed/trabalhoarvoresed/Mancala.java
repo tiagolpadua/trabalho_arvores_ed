@@ -73,12 +73,12 @@ public class Mancala implements Cloneable {
     // Retorna true se houver jogada bonus
     private static boolean mover(int casa, int[] vetorCasasJogador, int[] vetorCasasAdversario) throws MancalaException {
         if (casa < 1 || casa > 6) {
-            throw new MancalaException("Posi��o inv�lida.");
+            throw new MancalaException("Posição inválida.");
         }
 
         int mao = vetorCasasJogador[casa - 1];
         if (mao == 0) {
-            throw new MancalaException("Jogada inv�lida - n�o h� pe�as na posi��o indicada.");
+            throw new MancalaException("Jogada inválida - não há peças na posição indicada.");
         }
 
         vetorCasasJogador[casa - 1] = 0;
@@ -266,11 +266,6 @@ public class Mancala implements Cloneable {
             }
         } else {
             no.setValor(m.getPocoJ2() - m.getPocoJ1());
-            // if (m.isVezJogador1()) {
-            // no.setValor(m.getPocoJ1() * -1);
-            // } else {
-            // no.setValor(m.getPocoJ2());
-            // }
         }
         return no;
     }

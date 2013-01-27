@@ -10,7 +10,7 @@ public class MancalaConsole {
         Mancala m = new Mancala();
         int numeroNiveis = 0;
         do {
-            System.out.println("Digite o n�mero de níveis (1-9):");
+            System.out.println("Digite o número de níveis (1-9):");
             try {
                 numeroNiveis = Integer.parseInt(buffer.readLine());
             } catch (Exception e) {
