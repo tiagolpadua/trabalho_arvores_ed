@@ -36,7 +36,7 @@ public class MancalaConsole {
                     continue;
                 }
             } else {
-                System.out.println("Digite o movimento do jogador 2:");
+                System.out.println("Aguarde, o computador está pensando...");
                 long ti = System.currentTimeMillis();
                 Arvore a = null;
                 try {
