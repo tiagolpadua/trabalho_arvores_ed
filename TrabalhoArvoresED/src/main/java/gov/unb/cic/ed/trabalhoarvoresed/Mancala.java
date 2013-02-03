@@ -156,7 +156,7 @@ public class Mancala implements Cloneable {
         }
     }
 
-    public void resetar() {
+    private void resetar() {
         vezJogador = 1;
         for (int i = 0; i < 6; i++) {
             vetorCasasJ1[i] = 4;
@@ -184,6 +184,7 @@ public class Mancala implements Cloneable {
         return terminou1 || terminou2;
     }
 
+    @Override
     public String toString() {
         // 6 5 4 3 2 1
         // / 12 - .4 - .5 - 12 - .4 - .5 \
@@ -265,7 +266,11 @@ public class Mancala implements Cloneable {
                 no.setValor(m.getPocoJ2() - m.getPocoJ1());
             }
         } else {
-            no.setValor(m.getPocoJ2() - m.getPocoJ1());
+            if(m.isVezJogador2()){
+                no.setValor(m.getPocoJ2() - m.getPocoJ1());
+            }else{
+                no.setValor((m.getPocoJ2() - m.getPocoJ1())*-1);
+            }
         }
         return no;
     }

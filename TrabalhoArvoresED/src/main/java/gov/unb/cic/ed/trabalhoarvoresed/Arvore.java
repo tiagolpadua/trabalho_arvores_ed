@@ -16,9 +16,27 @@ public class Arvore {
         return null == raiz;
     }
 
+//    @Override
+//    public String toString() {
+//        return "Arvore [raiz=" + raiz.getValor() + "]";
+//    }
+    
     @Override
     public String toString() {
-        return "Arvore [raiz=" + raiz + "]";
+        return formataNo(raiz, "");
+    }
+    
+    private String formataNo(No no, String prefixo){
+        String ret = prefixo + "+-(" + no.getValor() + ")\n";
+        if(no.getFilhos() != null){
+            Elemento e = no.getFilhos().getCabeca();
+            while(e!=null){               
+                ret += formataNo((No)e.getValor(), prefixo + 
+                        (e.getProximo() != null ? "|" : " "));
+                e = e.getProximo();
+            }
+        }
+        return ret;
     }
 
     public long contarNos() {
