@@ -1,5 +1,17 @@
 \begin{thebibliography}{1}
 
+\bibitem{MANCALA}
+Diversos.
+\newblock {Mancala}.
+\newblock \url{http://pt.wikipedia.org/wiki/Mancala}, 2013.
+\newblock [acessado em 19 de Fevereiro de 2013].
+
+\bibitem{MINIMAX}
+Diversos.
+\newblock {Minimax}.
+\newblock \url{http://en.wikipedia.org/wiki/Minimax}, 2013.
+\newblock [acessado em 19 de Fevereiro de 2013].
+
 \bibitem{DATASTRUCTURESJAVA}
 Roberto~Tamassia Michael T.~Goodrich.
 \newblock {\em Data Structures and Algorithms in Java.}
