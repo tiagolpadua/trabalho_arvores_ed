@@ -15,11 +15,6 @@ public class Arvore {
     public boolean isVazia() {
         return null == raiz;
     }
-
-//    @Override
-//    public String toString() {
-//        return "Arvore [raiz=" + raiz.getValor() + "]";
-//    }
     
     @Override
     public String toString() {
@@ -27,7 +22,7 @@ public class Arvore {
     }
     
     private String formataNo(No no, String prefixo){
-        String ret = prefixo + "+-(" + no.getValor() + ")\n";
+        String ret = prefixo + "+-(" + no.isAlpha() + "|" + no.getValor() + ")\n";
         if(no.getFilhos() != null){
             Elemento e = no.getFilhos().getCabeca();
             while(e!=null){               
