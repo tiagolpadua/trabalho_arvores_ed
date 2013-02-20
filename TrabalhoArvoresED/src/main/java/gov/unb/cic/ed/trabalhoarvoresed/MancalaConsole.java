@@ -30,7 +30,7 @@ public class MancalaConsole {
                 }
 
                 try {
-                    m.moverJ1(casa);
+                    m.moverJ1(casa, true);
                 } catch (MancalaException e) {
                     System.out.println(e.getMessage());
                     continue;
@@ -54,7 +54,7 @@ public class MancalaConsole {
                     if (no.getValor().equals(a.getRaiz().getValor())) {
                         System.out.println("Computador move: " + no.getCasaMovida());
                         try {
-                            m.moverJ2(no.getCasaMovida());
+                            m.moverJ2(no.getCasaMovida(), true);
                         } catch (MancalaException e1) {
                             System.out.println(e1.getMessage());
                             continue;
@@ -64,6 +64,7 @@ public class MancalaConsole {
                     e = e.getProximo();
                 }
             }
+            System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>");
             System.out.println(m);
         }
         System.out.println("Jogo terminou");

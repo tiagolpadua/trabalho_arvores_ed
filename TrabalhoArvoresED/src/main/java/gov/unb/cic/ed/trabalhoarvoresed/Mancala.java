@@ -71,7 +71,7 @@ public class Mancala implements Cloneable {
     }
 
     // Retorna true se houver jogada bonus
-    private static boolean mover(int casa, int[] vetorCasasJogador, int[] vetorCasasAdversario) throws MancalaException {
+    private static boolean mover(int casa, int[] vetorCasasJogador, int[] vetorCasasAdversario, boolean printInfo) throws MancalaException {
         if (casa < 1 || casa > 6) {
             throw new MancalaException("Posição inválida.");
         }
@@ -88,13 +88,18 @@ public class Mancala implements Cloneable {
             while (casaAtual <= 6 && mao > 0) {
                 vetorCasasJogador[casaAtual - 1]++;
                 mao--;
-                if (mao == 0 && vetorCasasJogador[casaAtual - 1] == 1) {
+                if (mao == 0 && vetorCasasJogador[casaAtual - 1] == 1) {                    
                     vetorCasasJogador[casaAtual - 1] = 0;
                     vetorCasasJogador[6]++;
 
                     int casaAdversario = 7 - casaAtual;
-                    vetorCasasJogador[6] += vetorCasasAdversario[casaAdversario - 1];
-                    vetorCasasAdversario[casaAdversario - 1] = 0;
+                    if(vetorCasasAdversario[casaAdversario - 1] > 0){
+                        if(printInfo){
+                            System.out.println(vetorCasasAdversario[casaAdversario - 1] + " peça(s) foi(ram) capturada(s)!");
+                        }
+                        vetorCasasJogador[6] += vetorCasasAdversario[casaAdversario - 1];
+                        vetorCasasAdversario[casaAdversario - 1] = 0;
+                    }
                 }
                 casaAtual++;
             }
@@ -103,6 +108,9 @@ public class Mancala implements Cloneable {
                 vetorCasasJogador[6]++;
                 mao--;
                 if (mao == 0) {
+                    if(printInfo){
+                        System.out.println("Jogada bônus!");
+                    }
                     return true;
                 }
             }
@@ -119,12 +127,12 @@ public class Mancala implements Cloneable {
         return false;
     }
 
-    public void moverJ1(int casa) throws MancalaException {
+    public void moverJ1(int casa, boolean printInfo) throws MancalaException {
         if (isVezJogador2()) {
             throw new RuntimeException("Jogador errado!");
         }
 
-        if (!mover(casa, vetorCasasJ1, vetorCasasJ2)) {
+        if (!mover(casa, vetorCasasJ1, vetorCasasJ2, printInfo)) {
             vezJogador = 2;
         }
 
@@ -133,11 +141,11 @@ public class Mancala implements Cloneable {
         }
     }
 
-    public void moverJ2(int casa) throws MancalaException {
+    public void moverJ2(int casa, boolean printInfo) throws MancalaException {
         if (isVezJogador1()) {
             throw new RuntimeException("Jogador errado!");
         }
-        if (!mover(casa, vetorCasasJ2, vetorCasasJ1)) {
+        if (!mover(casa, vetorCasasJ2, vetorCasasJ1, printInfo)) {
             vezJogador = 1;
         }
 
@@ -250,13 +258,13 @@ public class Mancala implements Cloneable {
                 if (m.isVezJogador1()) {
                     if (m.getCasaJ1(i) > 0) {
                         Mancala m1 = (Mancala) m.clone();
-                        m1.moverJ1(i);
+                        m1.moverJ1(i, false);
                         filhos.insereInicio(new Elemento(obterNoDeJogadas(m1, niveis - 1, no, i)));
                     }
                 } else {
                     if (m.getCasaJ2(i) > 0) {
                         Mancala m1 = (Mancala) m.clone();
-                        m1.moverJ2(i);
+                        m1.moverJ2(i, false);
                         filhos.insereInicio(new Elemento(obterNoDeJogadas(m1, niveis - 1, no, i)));
                     }
                 }
