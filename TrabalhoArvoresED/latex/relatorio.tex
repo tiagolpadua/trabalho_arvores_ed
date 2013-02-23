@@ -1,0 +1,146 @@
+\documentclass[a4paper,11pt]{article}
+
+%Packages
+\usepackage[brazilian]{babel} %Brazilian Portuguese
+\usepackage[T1]{fontenc}
+\usepackage{subfig}
+\usepackage{color}
+\usepackage[utf8]{inputenc}
+\usepackage{url} %URLs
+\usepackage{makeidx} %Index
+\usepackage[pdftex]{graphicx} %Graphics
+\usepackage{amsfonts} %Math fonts
+%\usepackage{indentfirst} %Makes it indent the first paragraph of the section
+\usepackage{listings} %Code support, properly highlighted
+\usepackage{verbatim} %Better verbatim
+%\usepackage{fancyvrb} %Fancy verbatim
+\usepackage{cite} %Better citation
+%\usepackage{siunitx} %SI Units 
+\usepackage{hyperref} %Makes links to your references, making your life quite a bit easier.
+%\usepackage[pdftex]{colortbl} %Color Tables
+\usepackage{array} %Better tables - improves the algorythms
+\hypersetup{ %Sets up hyperref
+    %bookmarks=true,         % show bookmarks bar?
+    %unicode=false,          % non-Latin characters in Acrobat?s bookmarks
+    %pdftoolbar=true,        % show Acrobat?s toolbar?
+    %pdfmenubar=true,        % show Acrobat?s menu?
+    %pdffitwindow=false,     % window fit to page when opened
+    %pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={Relatório},    % title
+    %pdfauthor={Felipe Brandão Cavalcanti},     % author
+    colorlinks=false,       % false: boxed links; true: colored links
+    linkcolor=red,          % color of internal links
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=cyan           % color of external links
+}
+\lstset{ %Sets up lisitings, so we get highlighted code
+language=Java,                     % choose the language of the code
+basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+numbers=left,                   % where to put the line-numbers
+numberstyle=\footnotesize,      % the size of the fonts that are used for the line-numbers
+stepnumber=2,                   % the step between two line-numbers. If it's 1 each line will be numbered
+numbersep=5pt,                  % how far the line-numbers are from the code
+backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+showspaces=false,               % show spaces adding particular underscores
+showstringspaces=false,         % underline spaces within strings
+showtabs=false,                 % show tabs within strings adding particular underscores
+frame=single,	                % adds a frame around the code
+tabsize=2,	                    % sets default tabsize to 2 spaces
+captionpos=b,                   % sets the caption-position to bottom
+breaklines=true,                % sets automatic line breaking
+breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+escapeinside={\%*}{*)}          % if you want to add a comment within your code
+}
+
+
+\parindent15pt  \parskip0pt
+\setlength\voffset{-2.0cm}
+\setlength\hoffset{-1.5cm}
+\setlength\textwidth{16.0cm}
+\setlength\textheight{24.5cm}
+\setlength\baselineskip{2cm}
+\renewcommand{\baselinestretch}{1.2}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\begin{document}
+\begin{titlepage}
+\begin{center}
+ 
+% Upper part of the page
+\includegraphics[width=0.25\textwidth]{./unb.pdf}\\[1cm]
+ 
+\textsc{\LARGE Universidade de Brasília}\\[1.5cm]
+ 
+\textsc{\Large Estrutura de Dados - Turma B - Trabalho II}\\[0.5cm]
+ 
+% Title
+\HRule \\[0.4cm]
+{ \huge \bfseries Game Trees}
+\HRule
+\vspace{0.75cm}
+\large CIC - Departamento de Ciência da Computação\\
+\vspace{0.8cm}
+% Author and supervisor
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Autores:}\\
+Tiago L. P. de Pádua - 12/1042457\\
+Ronaldo S. Ferreira Jr. - 09/48721\\
+Alex Leite - 05/97694\\
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Professor:} \\
+Eduardo A. P. Alchieri
+\end{flushright}
+\end{minipage}
+ 
+\vfill
+ 
+% Bottom of the page
+{\large Fevereiro de 2013}
+\end{center}
+\end{titlepage}
+
+\pagestyle{plain}
+
+%\begin{abstract}
+%Através do estudo de estrututa de dados, este trabalho tem o objetivo a confecção de um projeto, onde deverá ser feito um $software$ capaz de de validar, avaliar e realizar a conversão de uma expressão aritmética escrita em forma infixa para a forma posfixa.
+%\end{abstract}
+
+\section{Introdução} 
+Por meio dos estudos e utilização de árvores genéricas, será implementado um jogo de tabuleiro, com inteligencia artificial, em que o computador será capaz de prever os movientos do jogador humano.
+
+O jogo a ser implementado é de origem africana, denominado $Mancala$, embora existam diversas modalidades e regras, todas elas seguem o padrão em que o tabuleiro possui 14 casas, as quais 12 são casas menores, divididas em 2 fileiras de 6, sendo que cada fileira pertence a um jogadoe e, 2 casas maiores, chamadas $Khalas$. [INSERIR FIGURA, INSERIR RESTANTE DAS REGRAS]
+
+[EXPLICAR GAME TREE]
+[EXPLICAR MINIMAX] 
+
+
+
+\section{Implementação}
+A implementação do código foi realizada utilizando a linguagem de programação Java (javac 1.6.0\_37) através da plataforma de desenvolvimento Netbeans 7.0.1.\\
+
+As seguintes classes foram criadas:
+\begin{itemize}
+  \item CLASSES
+\end{itemize}
+
+\section{CÓDIGO FONTE}
+Para a realização dos testes, foir criada a classe TesteExpressaoAritmetica.java e foram realizados os testes conforme consta abaixo:
+\begin{lstlisting}
+[CODIGO FONTE]
+\end{lstlisting}
+
+\section{Conclusão}
+Conclui-se que a utilização de árvores genéricas é de grande ajuda para desenvolvimento de sistemas com inteligencia atificial, predição de resultados e movimentos, tais como jogos.
+(EM PROCESSO DE CONCLUSÃO)
+
+
+\nocite{*}					%Imprime toda a bibliografia
+\bibliography{bibliografia}		
+\bibliographystyle{plain}		
+\end{document}
