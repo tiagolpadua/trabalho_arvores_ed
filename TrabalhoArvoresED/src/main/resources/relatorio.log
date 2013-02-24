@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.4.27)  24 FEB 2013 18:24
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.4.27)  24 FEB 2013 19:11
 entering extended mode
 **C:/Users/sony/Desktop/ED2/ARV2/TrabalhoArvoresED/src/main/resources/relatorio
 .tex
@@ -605,7 +605,7 @@ File: mancala.pdf Graphic file (type pdf)
 Package pdftex.def Info: mancala.pdf used on input line 125.
 (pdftex.def)             Requested size: 227.62204pt x 55.23103pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--136
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
 
  []
 
@@ -613,35 +613,46 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.140   \item L
-               istaLigada.java [1 <C:/Users/sony/Desktop/ED2/ARV2/TrabalhoArvor
-esED/src/main/resources/mancala.pdf>] [2] [3]
+l.138 
+       [1 <C:/Users/sony/Desktop/ED2/ARV2/TrabalhoArvoresED/src/main/resources/
+mancala.pdf>] [2] <minimax.pdf, id=90, 562.90298pt x 329.23pt>
+File: minimax.pdf Graphic file (type pdf)
+
+<use minimax.pdf>
+Package pdftex.def Info: minimax.pdf used on input line 196.
+(pdftex.def)             Requested size: 227.62204pt x 133.13144pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[3]
 (C:\Users\sony\Desktop\ED2\ARV2\TrabalhoArvoresED\src\main\resources\relatorio.
 bbl
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 6.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 ))
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 193.
- [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 193.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 210.
+ [4 <C:/Users/sony/Desktop/ED2/ARV2/TrabalhoArvoresED/src/main/resources/minima
+x.pdf>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 210.
 
 (C:\Users\sony\Desktop\ED2\ARV2\TrabalhoArvoresED\src\main\resources\relatorio.
 aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 193.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 193.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 210.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 210.
 Package rerunfilecheck Info: File `relatorio.out' has not changed.
 (rerunfilecheck)             Checksum: 7C8E8E79910BB6E5CBA9832769B00189;739.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 193.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 210.
  ) 
 Here is how much of TeX's memory you used:
- 8358 strings out of 494049
- 123970 string characters out of 3146068
- 238097 words of memory out of 3000000
- 11506 multiletter control sequences out of 15000+200000
+ 8365 strings out of 494049
+ 124073 string characters out of 3146068
+ 239097 words of memory out of 3000000
+ 11511 multiletter control sequences out of 15000+200000
  22039 words of font info for 63 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 44i,7n,42p,808b,389s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,7n,42p,670b,343s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm-super-t1.enc}<
 C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:
 /Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/P
@@ -656,9 +667,9 @@ iKTeX 2.9/fonts/type1/public/cm-super/sfrm1200.pfb><C:/Program Files (x86)/MiKT
 eX 2.9/fonts/type1/public/cm-super/sfti1095.pfb><C:/Program Files (x86)/MiKTeX 
 2.9/fonts/type1/public/cm-super/sfti1200.pfb><C:/Program Files (x86)/MiKTeX 2.9
 /fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on relatorio.pdf (5 pages, 236351 bytes).
+Output written on relatorio.pdf (5 pages, 259722 bytes).
 PDF statistics:
- 158 PDF objects out of 1000 (max. 8388607)
- 28 named destinations out of 1000 (max. 500000)
- 107 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 172 PDF objects out of 1000 (max. 8388607)
+ 29 named destinations out of 1000 (max. 500000)
+ 112 words of extra memory for PDF output out of 10000 (max. 10000000)
 

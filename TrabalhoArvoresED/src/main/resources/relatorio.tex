@@ -73,7 +73,7 @@ escapeinside={\%*}{*)}          % if you want to add a comment within your code
  
 \textsc{\LARGE Universidade de Brasília}\\[1.5cm]
  
-\textsc{\Large Estrutura de Dados - Turma B - Trabalho I}\\[0.5cm]
+\textsc{\Large Estrutura de Dados - Turma B - Trabalho II}\\[0.5cm]
  
 % Title
 \HRule \\[0.4cm]
@@ -131,6 +131,8 @@ Demais regras do jogo podem ser obtidas em \cite{MANCALA, KALAH}.
 
 O algoritmo $Minimax$\cite{MINIMAX} é utilizado para indicar qual a melhor jogada a ser realizada a partir da disposição atual do tabuleiro utilizando uma árvore de jogadas possíveis. A idéia central do algoritmo é que os jogadores sempre escolherão a jogada que lhe traga maior benefício em detrimento do oponente.
 
+A árvore gerada funciona como um preditor de movimentos e é de grande valia para implementação de processos de inteligência aritificial, principalmente em jogos, porém pode ser adaptada para outras aplicações que necessite de predição de resultados.
+
 \section{Implementação}
 A implementação do código foi realizada utilizando a linguagem de programação Java (javac 1.7.0\_13) através da plataforma de desenvolvimento Netbeans 7.2.1.\\
 
@@ -152,24 +154,30 @@ Classe que possui a função $main$ do programa, ou seja, a primeira função a 
 Utilizada para indicar que ocorreu um erro dentro da execução do programa.
 
 \subsection{Arvore.java}
-Classe que implementa as funções básicas de uma árvore, possui somente o campo $raiz$ do tipo $No$ e uma função que retorna um booleano caso a árvore esteja vazia.
+Classe que implementa as funções básicas de uma árvore, possui somente o campo $raiz$, do tipo $No$ e, uma função que retorna um booleano, caso a árvore esteja vazia.
 
 \subsection{No.java}
-Representa um nó de uma árvore, possui um valor (utilizado pela função $Minimax$), um booleano $alpha$ que indica de qual jogador é a "vez" de jogar, um objeto do tipo No chamado de "pai", que é uma referência para o nó "pai", necessário uma vez que o algoritmo $Minimax$ é executado no sentido das folhas para a raiz da árvore, além disso, possui também uma lista ligada que representa os "filhos" deste nó e um número inteiro que representa qual casa foi movida na mancala para que ela chegasse no estado atual.
+Representa um nó de uma árvore, possui um valor (utilizado pela função $Minimax$), um booleano $alpha$, que indica de qual jogador é a "vez" de jogar, um objeto, do tipo $No$, chamado de "pai", que é uma referência para o nó "pai". 
+
+O nó "pai" é necessário, uma vez que o algoritmo $Minimax$ é executado no sentido das folhas para a raiz da árvore. Além disso, possui também uma lista ligada, que representa os "filhos" deste nó e, um número inteiro que representa qual casa foi movida na mancala para que ela chegasse no estado atual.
 
 \subsection{ListaLigada.java}
-Implementa uma lista encadeada que possui uma referência para o primeiro elemento da lista além das funcões utilitárias de inserção na lista e verificação de lista vazia.
+Implementa uma lista encadeada que possui uma referência para o primeiro elemento da lista, além das funcões utilitárias de inserção na lista e verificação de lista vazia.
 
 \subsection{Elemento.java}
 Classe utilizada como unidade básica da lista ligada.
 
 \subsection{Mancala.java}
-Representa o tabuleiro do jogo, contém a "inteligência" necessária para mover as peças de uma casa e redistribuí-las corretamente conforme as regras do jogo e, após a movimentação das peças, indica de quem é a "vez de jogar", indica também se o jogo terminou. Além disso, nesta classe também está implementado o algoritmo $Minimax$, ressaltamos que a questão mais importante do algoritmo é a função de avaliação da Mancala. Em nosso projeto, definimos que a avaliação da Mancala é realizada pela diferença entre a quantidade de peças dos jogadores em suas "valas", assim, o computador irá escolher jogadas que maximizem o número de peças em sua "vala" e minimize do oponente.
+Representa o tabuleiro do jogo, contém a "inteligência" necessária para mover as peças de uma casa e redistribuí-las, corretamente, conforme as regras do jogo e, após a movimentação das peças, indica de quem é a "vez de jogar". 
+
+Indica, também, se o jogo terminou. 
+
+Nesta classe está implementado o algoritmo $Minimax$, ressaltamos que a questão mais importante do algoritmo é a função de avaliação da Mancala. Em nosso projeto, definimos que a avaliação da Mancala é realizada pela diferença entre a quantidade de peças dos jogadores em suas "valas", assim, o computador irá escolher jogadas que maximizem o número de peças em sua "vala" e minimize do oponente.
 
 \subsection{Execução do programa}
-Quando o programa é executado, inicialmente ele solicita que o usuário informe qual o número de níveis devem ser utilizados na criação da árvore de jogadas, em nossos testes, valores acima de 8 tornaram o sistema instável devido à utilização de toda a memória do computador.
+Ao ser executado, o programa, inicialmente, solicita que o usuário informe qual o número de níveis que devem ser utilizados na criação da árvore de jogadas. Em nossos testes, valores acima de 8 tornaram o sistema instável devido à utilização de toda a memória do computador.
 
-É então instanciado um novo objeto do tipo Mancala, que representa o tabuleiro de jogadas, então inicia-se um loop que é executado enquanto o jogo não terminar (esta informação é obtida diretamente do objeto Mancala).
+É então instanciado um novo objeto, do tipo Mancala, que representa o tabuleiro de jogadas, iniciando-se, então, um $loop$, que é executado enquanto o jogo não terminar (esta informação é obtida diretamente do objeto Mancala).
 
 O próximo passo do programa é identificar de quem é a "vez de jogar", caso seja do jogador humano, é solicitado que este informe a casa a ser movida, caso seja a vez do computador, são seguidos os seguintes passos:
 
@@ -182,10 +190,19 @@ O próximo passo do programa é identificar de quem é a "vez de jogar", caso se
 \end{enumerate}
 
 \subsection{Testes}
-Foram criadas as classes de teste "ArvoreTeste.java" e "MinimaxTeste.java", nestes testes foi utilizado como referência o exemplo da aplicação do algoritmo $Minimax$ cuja imagem de nome "701px-Minimax.svg.png" se encontra junto do projeto, foi comparada a árvore resultante e identificamos que estas eram idênticas.
+Foram criadas as classes de teste "ArvoreTeste.java" e "MinimaxTeste.java", nestes testes foi utilizado como referência o exemplo da aplicação do algoritmo $Minimax$, a árvore da Figura \ref{fig:Minimax} foi comparada a árvore resultante e, identificamos que estas eram idênticas.
+
+\begin{figure}[h!]
+    \includegraphics[width=0.5\textwidth]{minimax.pdf}
+  \centering
+  \caption{Árvore $Minimax$\cite{MINIMAX}.}\label{fig:Minimax}
+  \centering
+
+\end{figure}
 
 \section{Conclusão}
-Pode-se concluir que a utilização árvores de jogadas em conjunto com o algoritmo $Minimax$ é uma boa alternativa para se implementar inteligência artificial em jogos de tabuleiro, no entanto, o fator limitante é o número de jogadas disponíveis para os jogadores, uma vez que em jogos mais complexos como o Xadrez, a árvore de jogadas se tornará muito grande em um pequeno número de níveis, devendo assim ser utilizado um algoritmo de "poda" para economizar a memória do sistema.
+Pode-se concluir que a utilização árvores de jogadas em conjunto com o algoritmo $Minimax$ é uma boa alternativa para se implementar inteligência artificial em jogos de tabuleiro, no entanto, o fator limitante é o número de jogadas disponíveis para os jogadores, uma vez que em jogos mais complexos como o Xadrez, a árvore de jogadas se tornará muito grande em um pequeno número de níveis, devendo assim ser utilizado um algoritmo de "poda" para economizar a memória do sistema, já a memória é o fator mais crítico na utilização das $game trees$.
+Alternativamente, quando adaptadas, estas árvores podem ser utilizadas em outras aplicações de predição e inteligência atificial.
 
 \nocite{*}					%Imprime toda a bibliografia
 \bibliography{bibliografia}		
