@@ -110,9 +110,26 @@ Eduardo A. P. Alchieri
 \section{Introdução} 
 Através do estudo de estrututa de dados, este trabalho tem o objetivo a confecção de um projeto, onde deverá ser feito um $software$ que utilize uma  árvore genérica, chamada de $game tree$, para implementar a inteligência artificial de um jogo de tabuleiro utilizando o algoritmo conhecido como $Minimax$.
 
-Neste projeto foi utilizado o jogo de tabuleiro Mancala (\hyperlink{http://pt.wikipedia.org/wiki/Mancala}{ http://pt.wikipedia.org/wiki/Mancala}), onde o objetivo geral do jogo é mover o maior número de peças para a "vala" do jogador, que é a cavidade mais a direita do tabuleiro (demais regras do jogo podem ser obtidas no link citado).
+Neste projeto foi utilizado o jogo de tabuleiro Mancala\cite{MANCALA, KALAH} , onde o objetivo geral do jogo é mover o maior número de peças para a "vala" do jogador, que é a cavidade mais a direita do tabuleiro:
+\begin{itemize}
+  \item No início do jogo, cada casa é preenchida com 4 sementes. (Dependendo do estilo, podem ser colocadas 3, 5 ou 6 sementes);
+  \item Cada jogador controla uma fileira de 6 casas. As sementes movem-se no sentido anti-horário;
+  \item Na vez de cada jogador, escolhe-se uma casa, com sementes e, movem-se todas as sementes no sentido anti-horário;
+  \item As sementes devem percorrer todas as casas, até atingir a casa maior do jogador. Neste caso, a semente é capturada;
+  \item Caso a última semente da casa menor caia na casa maior. O jogador ganha uma vez extra;
+  \item Caso a última semente caia numa casa vazia e, a casa do oponente contiver sementes, todas as sementes da casa que estava vazia e da casa do oponente são capturadas. (Vão para a casa maior do jogador);
+  \item O jogo acaba quando não existem mais nenhuma semente na casa do dado jogador.
+\end{itemize}
+Demais regras do jogo podem ser obtidas em \cite{MANCALA, KALAH}.
+\begin{figure}[h!]
+    \includegraphics[width=0.5\textwidth]{mancala.pdf}
+  \centering
+  \caption{Tabuleiro Mancala.}
+  \centering
 
-O algoritmo $Minimax$ é utilizado para indicar qual a melhor jogada a ser realizada a partir da disposição atual do tabuleiro utilizando uma árvore de jogadas possíveis. A idéia central do algoritmo é que os jogadores sempre escolherão a jogada que lhe traga maior benefício em detrimento do oponente. (\hyperlink{http://en.wikipedia.org/wiki/Minimax}{http://en.wikipedia.org/wiki/Minimax}
+\end{figure}
+
+O algoritmo $Minimax$\cite{MINIMAX} é utilizado para indicar qual a melhor jogada a ser realizada a partir da disposição atual do tabuleiro utilizando uma árvore de jogadas possíveis. A idéia central do algoritmo é que os jogadores sempre escolherão a jogada que lhe traga maior benefício em detrimento do oponente.
 
 \section{Implementação}
 A implementação do código foi realizada utilizando a linguagem de programação Java (javac 1.7.0\_13) através da plataforma de desenvolvimento Netbeans 7.2.1.\\
